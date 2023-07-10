@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reportes</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="#">Sistema de Producción de Cemento</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -24,10 +30,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="produccion.html">Producción</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="inventario.html">Inventario</a>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="reportes.html">Reportes</a>
                         </li>
                         <li class="nav-item">
@@ -42,15 +48,69 @@
     <main>
         <div class="container mt-4">
             <h1>Reportes</h1>
-            <p>Aquí puedes generar y consultar informes sobre la producción de cemento.</p>
-            <!-- Agrega los elementos de reportes aquí -->
+            <p>Aquí puedes generar informes y visualizar datos estadísticos.</p>
+
+            <div class="mb-4">
+                <h2>Generar Informe de Ventas</h2>
+                <form id="generarInformeVentasForm">
+                    <!-- Agrega los campos y opciones para generar el informe de ventas -->
+                    <div class="mb-3">
+                        <label for="fechaInicio">Fecha de Inicio:</label>
+                        <input type="date" id="fechaInicio" name="fechaInicio" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fechaFin">Fecha de Fin:</label>
+                        <input type="date" id="fechaFin" name="fechaFin" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Generar Informe</button>
+                </form>
+            </div>
+
         </div>
     </main>
+
 
     <footer class="mt-4 myFooter">
         <div class="container myFooter">
             <p>&copy; 2023 Sistema de Producción de Cemento. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('generarInformeVentasForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var fechaInicio = document.getElementById('fechaInicio').value;
+            var fechaFin = document.getElementById('fechaFin').value;
+            // Lógica para generar el informe de ventas con las fechas seleccionadas
+            // ...
+            // Mostrar mensaje de "Generando informe" utilizando SweetAlert
+            Swal.fire({
+                title: 'Generando Informe',
+                html: 'Por favor, espera mientras se genera el informe...',
+                icon: 'info',
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                willOpen: () => {
+                    Swal.showLoading();
+                    setTimeout(() => {
+                        // Lógica para generar el informe (simulación de tiempo)
+                        Swal.hideLoading();
+                        Swal.fire({
+                            title: 'Informe Generado',
+                            text: 'El informe de ventas ha sido generado exitosamente.',
+                            icon: 'success',
+                            confirmButtonText: 'Aceptar'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                // Restablecer el formulario
+                                document.getElementById('generarInformeVentasForm').reset();
+                            }
+                        });
+                    }, 2000); // Simulación de 2 segundos para generar el informe
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
