@@ -22,6 +22,7 @@ p {
 .myFooter{
     background-color: #fff;
     color: black;
+    height: 70px; 
     text-align: center;
 }
 
@@ -59,3 +60,11 @@ p {
     margin-left: 0px;
   }
   
+  html, body {
+    height: 100%;
+}
+
+.content-wrap {
+    min-height: calc(100% - 70px); /* Ajusta el valor de 70px según la altura del footer */
+    /* Otros estilos para el contenido principal */
+}
