@@ -22,7 +22,6 @@ p {
 .myFooter{
     background-color: #fff;
     color: black;
-    height: 70px; 
     text-align: center;
 }
 
@@ -59,12 +58,29 @@ p {
     margin-right: 10px;
     margin-left: 0px;
   }
-  
+
   html, body {
     height: 100%;
 }
 
 .content-wrap {
-    min-height: calc(100% - 70px); /* Ajusta el valor de 70px según la altura del footer */
-    /* Otros estilos para el contenido principal */
+    min-height: calc(100% - 70px);
 }
+
+/* Estilos generales para todas las pantallas */
+
+/* Estilos para teléfonos (hasta 767px de ancho) */
+@media (max-width: 767px) {
+    /* Estilos específicos para la vista desde el teléfono */
+  }
+  
+  /* Estilos para tabletas (768px a 991px de ancho) */
+  @media (min-width: 768px) and (max-width: 991px) {
+    /* Estilos específicos para tabletas */
+  }
+  
+  /* Estilos para pantallas de escritorio (más de 992px de ancho) */
+  @media (min-width: 992px) {
+    /* Estilos específicos para pantallas de escritorio */
+  }
+  
