@@ -55,5 +55,7 @@ p {
 .logo{
     width: 160px;
     height: 100px;
+    margin-right: 10px;
+    margin-left: 0px;
   }
   
