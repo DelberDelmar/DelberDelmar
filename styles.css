@@ -1,0 +1,26 @@
+body {
+    background-color: #828282;
+    color: #fff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: justify;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+.myFooter{
+    background-color: #fff;
+    color: black;
+    text-align: center;
+}
