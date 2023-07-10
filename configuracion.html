@@ -9,66 +9,87 @@
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="#">Sistema de Producción de Cemento</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="produccion.html">Producción</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="inventario.html">Inventario</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="reportes.html">Reportes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="configuracion.html">Configuración</a>
-                        </li>
-                    </ul>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">Sistema de Producción de Cemento</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="produccion.html">Producción</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="inventario.html">Inventario</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="reportes.html">Reportes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="configuracion.html">Configuración</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+    
+        <main>
+            <div class="container mt-4"> 
+                <h1 class="display-4">Configuración</h1>
+                <p>Aquí puedes realizar configuraciones y ajustes del sistema.</p>
+    
+                <div class="mb-4">
+                    <h2>Configuración del Sistema</h2>
+                    <form id="configuracionForm">
+                        <div class="mb-3">
+                            <label for="nombreEmpresa">Nombre de la Empresa:</label>
+                            <input type="text" id="nombreEmpresa" name="nombreEmpresa" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="direccionEmpresa">Dirección de la Empresa:</label>
+                            <input type="text" id="direccionEmpresa" name="direccionEmpresa" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefonoEmpresa">Teléfono de la Empresa:</label>
+                            <input type="tel" id="telefonoEmpresa" name="telefonoEmpresa" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar Configuración</button>
+                    </form>
+                </div>
+    
+            </div>
+        </main>
+   
+
+    
+        <div class="container">
+            <h1>Sala de Control</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Control de Proceso</h2>
+                    <canvas id="myChart" class="color"></canvas>
+                </div>
+                <div class="col-md-6">
+                    <h2>Alarmas y Eventos</h2>
+                    <ul id="alarmsList"></ul>
                 </div>
             </div>
-        </nav>
-    </header>
-
-    <main>
-        <div class="container mt-4">
-            <h1>Configuración</h1>
-            <p>Aquí puedes realizar configuraciones y ajustes del sistema.</p>
-
-            <div class="mb-4">
-                <h2>Configuración del Sistema</h2>
-                <form id="configuracionForm">
-                    <div class="mb-3">
-                        <label for="nombreEmpresa">Nombre de la Empresa:</label>
-                        <input type="text" id="nombreEmpresa" name="nombreEmpresa" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="direccionEmpresa">Dirección de la Empresa:</label>
-                        <input type="text" id="direccionEmpresa" name="direccionEmpresa" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="telefonoEmpresa">Teléfono de la Empresa:</label>
-                        <input type="tel" id="telefonoEmpresa" name="telefonoEmpresa" class="form-control" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Guardar Configuración</button>
-                </form>
-            </div>
-
         </div>
-    </main>
+    
 
     <footer class="mt-4 myFooter">
         <div class="container myFooter">
@@ -76,16 +97,15 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
     <script>
         document.getElementById('configuracionForm').addEventListener('submit', function(event) {
             event.preventDefault();
             var nombreEmpresa = document.getElementById('nombreEmpresa').value;
             var direccionEmpresa = document.getElementById('direccionEmpresa').value;
             var telefonoEmpresa = document.getElementById('telefonoEmpresa').value;
-            // Lógica para guardar la configuración en el sistema
-            // ...
-
-            // Mostrar mensaje de éxito utilizando SweetAlert
             Swal.fire({
                 title: 'Configuración Guardada',
                 text: 'La configuración se ha guardado exitosamente.',
@@ -93,6 +113,77 @@
                 confirmButtonText: 'Aceptar'
             });
         });
+
+        // Datos iniciales del gráfico
+        const initialData = [50, 75, 60, 85, 70];
+        
+        // Configuración del gráfico
+const chartConfig = {
+    type: 'line',
+    data: {
+        labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'],
+        datasets: [{
+            label: 'Producción de Cemento',
+            data: initialData,
+            backgroundColor: 'white',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 2,
+            fill: false // Establecer fill en false para usar una línea en lugar de un área
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        },
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        backgroundColor: 'white' // Establecer el fondo del gráfico en blanco
+    }
+};
+
+
+        // Obtener el elemento canvas para el gráfico
+        const ctx = document.getElementById('myChart').getContext('2d');
+
+        // Crear el gráfico utilizando Chart.js
+        const chart = new Chart(ctx, chartConfig);
+
+        // Función para generar datos aleatorios para el gráfico
+        function generateRandomData() {
+            const data = chart.data.datasets[0].data;
+            const newData = data.map(value => Math.floor(Math.random() * 100));
+            chart.data.datasets[0].data = newData;
+            chart.update();
+        }
+
+        // Actualizar el gráfico cada 3 segundos
+        setInterval(generateRandomData, 3000);
+
+        // Obtener el elemento de la lista de alarmas
+        const alarmsList = document.getElementById('alarmsList');
+
+        // Función para agregar una alarma a la lista
+        function addAlarm(message, status) {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `<span class="icon ${status}"><i class="fas fa-exclamation-circle"></i></span>${message}`;
+            alarmsList.appendChild(listItem);
+        }
+
+        // Ejemplo de generación de alarmas
+        addAlarm('Alarma 1: Temperatura alta', 'danger');
+        addAlarm('Alarma 2: Presión baja', 'warning');
+        addAlarm('Alarma 3: Flujo anormal', 'warning');
+        addAlarm('Evento 1: Cambio de turno', 'normal');
+        addAlarm('Evento 2: Mantenimiento programado', 'normal');
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
+

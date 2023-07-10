@@ -24,3 +24,30 @@ p {
     color: black;
     text-align: center;
 }
+
+.mt-md-4 {
+    margin-top: 1rem;
+}
+
+.icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.normal {
+    color: green;
+}
+
+.warning {
+    color: yellow;
+}
+
+.danger {
+    color: red;
+}
+
+.color{
+    background-color: #fff;
+}

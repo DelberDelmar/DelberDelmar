@@ -12,7 +12,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="#">Sistema de Producción de Cemento</a>
+                <a class="navbar-brand" href="index.html">Sistema de Producción de Cemento</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -49,21 +49,20 @@
                 <!-- Agrega los campos del formulario de registro de producción aquí -->
                 <!-- Ejemplo: -->
                 <div class="mb-3">
-                    <label for="cantidad">Cantidad de Cemento:</label>
-                    <input type="number" id="cantidad" name="cantidad" class="form-control" required>
-                </div>
-                <div class="mb-3">
                     <label for="fecha">Fecha:</label>
                     <input type="date" id="fecha" name="fecha" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="cantidad">Cantidad de Cemento:</label>
+                    <input type="number" id="cantidad" name="cantidad" class="form-control" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Registrar</button>
             </form>
 
             <div class="mt-4">
                 <h2>Visualización de Datos de Producción</h2>
-                <!-- Agrega la visualización de datos de producción aquí -->
-                <!-- Ejemplo: -->
-                <table class="table table-bordered">
+                <!-- Agrega una tabla para mostrar la lista de produccion -->
+                <table id ="produccionTable" class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Fecha</th>
@@ -79,7 +78,6 @@
                             <td>2023-07-09</td>
                             <td>1500</td>
                         </tr>
-                        <!-- Agrega más filas según los datos de producción -->
                     </tbody>
                 </table>
             </div>
@@ -92,22 +90,32 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
     <script>
+$(document).ready(function() {
+            $('#produccionTable').DataTable();
+        });
+
         document.getElementById('registroProduccionForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            // Simulación de envío del formulario
-            setTimeout(function() {
-                // Mostrar el mensaje de "Registro Enviado" utilizando SweetAlert
-                Swal.fire({
-                    title: '¡Registro Enviado!',
-                    text: 'El registro de producción ha sido enviado correctamente.',
-                    icon: 'success',
-                    confirmButtonText: 'Aceptar'
-                });
-                // Resetear el formulario
-                document.getElementById('registroProduccionForm').reset();
-            }, 1000); // Tiempo de espera antes de mostrar el mensaje (1 segundo en este ejemplo)
+            
+            var cantidad = document.getElementById('cantidad').value;
+            var fecha = document.getElementById('fecha').value;
+            var table = $('#produccionTable').DataTable();
+            table.row.add([fecha, cantidad]).draw();
+            document.getElementById('registroProduccionForm').reset();
+
+            Swal.fire({
+                icon: 'success',
+                title: '¡Registro Enviado!',
+                text: 'El registro de producción ha sido enviado correctamente.',
+                confirmButtonText: 'Aceptar'
+            });
         });
     </script>
 </body>
