@@ -92,3 +92,40 @@ p {
       padding: 10px;
     }
   }
+  .btn-toggle {
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .btn-on {
+    background-color: green;
+    color: white;
+  }
+  
+  .btn-off {
+    background-color: red;
+    color: white;
+  }
+  
+  .btn-disabled {
+    background-color: gray;
+    
+  }
+  
+  .centro{
+    text-align: center;
+  }
+
+  .process-control {
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 20px;
+  }
+
+
+  .process-container{
+    max-width: 1200px;
+    width: 100%;
+  }
