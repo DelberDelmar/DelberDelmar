@@ -55,22 +55,22 @@
         <main>
             <div class="container mt-4"> 
                 <h1 class="display-4">Sala de Control</h1>
-                <p>Aquí puedes realizar configuraciones y ajustes del sistema.</p>
+                <p>Bienvenido a la sala de control del sistema</p>
     
                 <div class="mb-4">
                     <h2>Configuración del Sistema</h2>
                     <form id="configuracionForm">
                         <div class="mb-3">
-                            <label for="nombreEmpresa">Nombre de la Empresa:</label>
-                            <input type="text" id="nombreEmpresa" name="nombreEmpresa" class="form-control" required>
+                            <label for="nombreEmpresa">Velocidad de la Banda transportadora:</label>
+                            <input type="number" id="nombreEmpresa" name="nombreEmpresa" class="form-control" required title="Ingrese un valor entero">
                         </div>
                         <div class="mb-3">
-                            <label for="direccionEmpresa">Dirección de la Empresa:</label>
-                            <input type="text" id="direccionEmpresa" name="direccionEmpresa" class="form-control" required>
+                            <label for="direccionEmpresa">Presion de la Bomba de Agua:</label>
+                            <input type="number" id="direccionEmpresa" name="direccionEmpresa" class="form-control" required title="Ingrese un valor entero">
                         </div>
                         <div class="mb-3">
-                            <label for="telefonoEmpresa">Teléfono de la Empresa:</label>
-                            <input type="tel" id="telefonoEmpresa" name="telefonoEmpresa" class="form-control" required>
+                            <label for="telefonoEmpresa">Temperatura de Calentador:</label>
+                            <input type="number" id="telefonoEmpresa" name="telefonoEmpresa" class="form-control" required title="Ingrese un valor entero">
                         </div>
                         <button type="submit" class="btn btn-primary">Guardar Configuración</button>
                     </form>
