@@ -129,3 +129,8 @@ p {
     max-width: 1200px;
     width: 100%;
   }
+  @media (max-width: 767px) { 
+    .d-flex.justify-content-between {
+      flex-direction: column;
+    }
+  }
