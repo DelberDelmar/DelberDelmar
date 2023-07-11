@@ -84,66 +84,66 @@
             <div class="d-flex justify-content-between">
               <div class="process-control">
                 <h3>LLenado de Cemento</h3>
-                <button id="encendidoBtn0" class="btn-on" onclick="toggleButton0()">Encendido</button>
+                <button id="encendidoBtn0" class="btn-disabled" onclick="toggleButton0()">Encendido</button>
                 <button id="apagadoBtn0" class="btn-off" onclick="toggleButton0()">Apagado</button>
               </div>
               <div class="process-control">
                 <h3>Bomba de agua</h3>
-                <button id="encendidoBtn1" class="btn-on" onclick="toggleButton1()">Encendido</button>
+                <button id="encendidoBtn1" class="btn-disabled" onclick="toggleButton1()">Encendido</button>
                 <button id="apagadoBtn1" class="btn-off" onclick="toggleButton1()">Apagado</button>
               </div>
               <div class="process-control">
                 <h3>Válvula 1</h3>
-                <button id="encendidoBtn2" class="btn-on" onclick="toggleButton2()">Encendido</button>
+                <button id="encendidoBtn2" class="btn-disabled" onclick="toggleButton2()">Encendido</button>
                 <button id="apagadoBtn2" class="btn-off" onclick="toggleButton2()">Apagado</button>
               </div>
             </div>
             <div class="d-flex justify-content-between">
               <div class="process-control">
                 <h3>Cinta Transportadora 1</h3>
-                <button id="encendidoBtn3" class="btn-on" onclick="toggleButton3()">Encendido</button>
+                <button id="encendidoBtn3" class="btn-disabled" onclick="toggleButton3()">Encendido</button>
                 <button id="apagadoBtn3" class="btn-off" onclick="toggleButton3()">Apagado</button>
               </div>
               <div class="process-control">
                 <h3>Quemador</h3>
-                <button id="encendidoBtn4" class="btn-on" onclick="toggleButton4()">Encendido</button>
+                <button id="encendidoBtn4" class="btn-disabled" onclick="toggleButton4()">Encendido</button>
                 <button id="apagadoBtn4" class="btn-off" onclick="toggleButton4()">Apagado</button>
               </div>
               <div class="process-control">
                 <h3>Calentador</h3>
-                <button id="encendidoBtn5" class="btn-on" onclick="toggleButton5()">Encendido</button>
+                <button id="encendidoBtn5" class="btn-disabled" onclick="toggleButton5()">Encendido</button>
                 <button id="apagadoBtn5" class="btn-off" onclick="toggleButton5()">Apagado</button>
               </div>
             </div>
             <div class="d-flex justify-content-between">
               <div class="process-control">
                 <h3>Cinta Transportadora 2</h3>
-                <button id="encendidoBtn6" class="btn-on" onclick="toggleButton6()">Encendido</button>
+                <button id="encendidoBtn6" class="btn-disabled" onclick="toggleButton6()">Encendido</button>
                 <button id="apagadoBtn6" class="btn-off" onclick="toggleButton6()">Apagado</button>
               </div>
               <div class="process-control">
                 <h3>Enfriador</h3>
-                <button id="encendidoBtn7" class="btn-on" onclick="toggleButton7()">Encendido</button>
+                <button id="encendidoBtn7" class="btn-disabled" onclick="toggleButton7()">Encendido</button>
                 <button id="apagadoBtn7" class="btn-off" onclick="toggleButton7()">Apagado</button>
               </div>
               <div class="process-control">
                 <h3>Moledora</h3>
-                <button id="encendidoBtn8" class="btn-on" onclick="toggleButton8()">Encendido</button>
+                <button id="encendidoBtn8" class="btn-disabled" onclick="toggleButton8()">Encendido</button>
                 <button id="apagadoBtn8" class="btn-off" onclick="toggleButton8()">Apagado</button>
               </div>
             </div>
             <div class="d-flex justify-content-between">
               <div class="process-control">
                 <h3>Cinta Transportadora 3</h3>
-                <button id="encendidoBtn9" class="btn-on" onclick="toggleButton9()">Encendido</button>
+                <button id="encendidoBtn9" class="btn-disabled" onclick="toggleButton9()">Encendido</button>
                 <button id="apagadoBtn9" class="btn-off" onclick="toggleButton9()">Apagado</button>
               </div>
             </div>
             <div class="d-flex justify-content-between">
                 <div class="process-control">
                   <h3>Válvula de Transporte</h3>
-                  <button id="encendidoBtn9" class="btn-on" onclick="toggleButton9()">Encendido</button>
-                  <button id="apagadoBtn9" class="btn-off" onclick="toggleButton9()">Apagado</button>
+                  <button id="encendidoBtn10" class="btn-disabled" onclick="toggleButton10()">Encendido</button>
+                  <button id="apagadoBtn10" class="btn-off" onclick="toggleButton10()">Apagado</button>
                 </div>
               </div>
           </div>
@@ -464,8 +464,27 @@ const chartConfig = {
                     encendidoBtn.classList.remove("btn-disabled");
                     encendidoBtn.classList.remove("btn-off");
                     encendidoBtn.classList.add("btn-on");
+                }  
                 }
+                function toggleButton10() {
+            var encendidoBtn= document.getElementById("encendidoBtn10");
+            var apagadoBtn= document.getElementById("apagadoBtn10");
+
+            if (encendidoBtn.classList.contains("btn-on")){
+                encendidoBtn.classList.remove("btn-on");
+                encendidoBtn.classList.add("btn-disabled");
+                apagadoBtn.classList.remove("btn-disabled");
+                apagadoBtn.classList.remove("btn-off");
+                apagadoBtn.classList.add("btn-off");
+                }else  if (apagadoBtn.classList.contains("btn-off")){
                     
+                    apagadoBtn.classList.remove("btn-off");
+                    apagadoBtn.classList.add("btn-disabled");
+                    
+                    encendidoBtn.classList.remove("btn-disabled");
+                    encendidoBtn.classList.remove("btn-off");
+                    encendidoBtn.classList.add("btn-on");
+                }  
                 }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
