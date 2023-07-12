@@ -50,8 +50,6 @@
     <main>
         <div class="container mt-4">
             <h1 class="display-4">Inventario</h1>
-            <p>Aquí puedes gestionar el inventario de productos.</p>
-
             <div class="mb-4">
                 <h2>Lista de Productos</h2>
                 <!-- Agrega una tabla para mostrar la lista de productos -->
@@ -61,8 +59,7 @@
                             <th>Nombre</th>
                             <th>Descripción</th>
                             <th>Cantidad</th>
-                            <th>Costo</th>
-                            
+                            <th>Costo</th> 
                         </tr>
                     </thead>
                     <tbody>
@@ -108,14 +105,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="costo">Costo:</label>
-                        <input type="number" id="costo" name="costo" class="form-control" required title="Rellene este campo">
+                        <input type="text" id="costo" name="costo" class="form-control" required title="Rellene este campo">
                     </div>
                     <button type="submit" class="btn btn-primary">Agregar</button>
                 </form>
             </div>
-
-           
-
         </div>
         </div>
     </main>
@@ -134,7 +128,6 @@
         $(document).ready(function() {
             $('#productosTable').DataTable();
         });
-
         document.getElementById('agregarProductoForm').addEventListener('submit', function(event) {
             event.preventDefault();
             var nombre = document.getElementById('nombre').value;
@@ -144,7 +137,6 @@
             var table = $('#productosTable').DataTable();
             table.row.add([nombre, descripcion, cantidad, costo]).draw();
             document.getElementById('agregarProductoForm').reset();
-
             Swal.fire({
                 icon: 'success',
                 title: 'Producto Agregado',
